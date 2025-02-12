@@ -279,12 +279,10 @@ def main(trial):
                     V[cellsfired,tt] = V_Reset
                     w[cellsfired,tt] = w[cellsfired,tt] + dw[cellsfired]
                     w2[cellsfired,tt] = w2[cellsfired,tt] + dw2
-                    s[cellsfirede,tt] = s[cellsfirede,tt] + p0*fac[cellsfirede,tt]*ds*(1.0-s[cellsfirede,tt])
-                    s[cellsfiredi,tt] = s[cellsfiredi,tt] + p0*fac[cellsfiredi,tt]*ds*(1.0-s[cellsfiredi,tt])
+                    s[cellsfired,tt] = s[cellsfired,tt] + p0*fac[cellsfired,tt]*ds*(1.0-s[cellsfired,tt])
                     spikes[cellsfired,tt] =  1
                     fac[cellsfirede,tt] = fac[cellsfirede,tt] + ffac*(Fmax - fac[cellsfirede,tt])
-                    
-                   # print(gnoise_EE[:,tt].shape, np.matmul(J[:,:inhind],s[:inhind,tt]).shape)
+                    #print(gnoise_EE[:,tt].shape, np.matmul(J[:,:inhind],s[:inhind,tt]).shape)
                     inpe = np.zeros(N)
                     inpi = np.zeros(N)
                     inpe[:NE] = gnoise_EE[:,tt]
@@ -494,14 +492,14 @@ def main(trial):
     #pickle.dump(mrateisb,open('fu3brateis_{0}.pkl'.format(TR),'wb'))
     #pickle.dump(mratecsa,open('fu3aratecs_{0}.pkl'.format(TR),'wb'))
     #pickle.dump(mrateisa,open('fu3arateis_{0}.pkl'.format(TR),'wb'))
-    pickle.dump(csfrac,open('pf1125mcsfrac_{0}.pkl'.format(TR),'wb'))
-    pickle.dump(isfrac,open('pf1125misfrac_{0}.pkl'.format(TR),'wb'))
+    pickle.dump(csfrac,open('pf3125mcsfrac_{0}.pkl'.format(TR),'wb'))
+    pickle.dump(isfrac,open('pf3125misfrac_{0}.pkl'.format(TR),'wb'))
     #pickle.dump(lencs,open('fu3numcs_{0}.pkl'.format(TR),'wb'))
     #pickle.dump(lenis,open('fu3numis_{0}.pkl'.format(TR),'wb'))
-    pickle.dump(csrate,open('pf1125mcsrate_{0}.pkl'.format(TR),'wb'))
-    pickle.dump(israte,open('pf1125misrate_{0}.pkl'.format(TR),'wb'))
-    pickle.dump(mratecstotal,open('pf1125mratecst_{0}.pkl'.format(TR),'wb'))
-    pickle.dump(mrateistotal,open('pf1125mrateist_{0}.pkl'.format(TR),'wb'))
+    #pickle.dump(csrate,open('pf1125mcsrate_{0}.pkl'.format(TR),'wb'))
+    #pickle.dump(israte,open('pf1125misrate_{0}.pkl'.format(TR),'wb'))
+    #pickle.dump(mratecstotal,open('pf1125mratecst_{0}.pkl'.format(TR),'wb'))
+    #pickle.dump(mrateistotal,open('pf1125mrateist_{0}.pkl'.format(TR),'wb'))
     
     #pickle.dump(inhratel,open('inhratelinh_{0}.pkl'.format(TR),'wb'))
     #pickle.dump(inhrateh,open('inhratelinh_{0}.pkl'.format(TR),'wb'))
